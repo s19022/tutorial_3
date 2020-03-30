@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Tutorial_3.DAL;
 using Tutorial_3.Models;
 
 namespace Tutorial_3.Controllers
@@ -11,10 +12,15 @@ namespace Tutorial_3.Controllers
     [Route("api/students")]
     public class StudentController : ControllerBase
     {
-        [HttpGet]
-        public string GetStudent(string orderBy)
+        private readonly IDbService _dbService;
+        public StudentController(IDbService dbService)
         {
-            return $"a, b, d, f orderBy " + orderBy;
+            _dbService = dbService;
+        }
+        [HttpGet]
+        public IActionResult GetStudent(string orderBy)
+        {
+            return Ok(_dbService.GetStudents());
         }
 
         [HttpPost]
