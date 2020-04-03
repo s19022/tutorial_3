@@ -14,9 +14,9 @@ namespace Tutorial_3.DAL
         {
             _students = new List<Student>
             {
-                new Student{IdStudent = 1, FirstName = "Jan", LastName = "K"},
-                new Student{IdStudent = 2, FirstName = "Anna", LastName = "M"},
-                new Student{IdStudent = 3, FirstName = "Andrey", LastName = "A"}
+            //    new Student{IdStudent = 1, FirstName = "Jan", LastName = "K"},
+              //  new Student{IdStudent = 2, FirstName = "Anna", LastName = "M"},
+                //new Student{IdStudent = 3, FirstName = "Andrey", LastName = "A"}
             };
         }
 
